@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<!-- Конфигурация логгера Log4j -->
+<log4j:configuration>
+
+    <!-- Конфигурация аппендера "console" для вывода логов в консоль -->
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <!-- Параметр "target" определяет куда направлять логи, в данном случае - в System.out -->
+        <param name="target" value="System.out"/>
+
+        <!-- Конфигурация форматирования сообщений лога -->
+        <layout class="org.apache.log4j.PatternLayout">
+            <!-- Параметр "ConversionPattern" определяет формат сообщений лога -->
+            <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss}] %p [%c: %L] %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- Главный (root) логгер -->
+    <root>
+        <!-- Уровень логирования для главного логгера -->
+        <level value="info"/>
+
+        <!-- Указание аппендеров, которые будут использоваться для главного логгера -->
+        <appender-ref ref="console"/>
+    </root>
+
+</log4j:configuration>
